@@ -1,3 +1,15 @@
+# == Schema Information
+#
+# Table name: cities
+#
+#  id         :integer          not null, primary key
+#  player_id  :integer
+#  x          :integer
+#  y          :integer
+#  created_at :datetime         not null
+#  updated_at :datetime         not null
+#
+
 require 'test_helper'
 
 class CityTest < ActiveSupport::TestCase
