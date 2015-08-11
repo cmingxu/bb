@@ -73,7 +73,6 @@ task :deploy => :environment do
       queue "mkdir -p #{deploy_to}/#{current_path}/tmp/"
       queue "touch #{deploy_to}/#{current_path}/tmp/restart.txt"
       queue  %[echo "copying files"]
-      queue "cp #{deploy_to}/#{current_path}/su/su.zip #{deploy_to}/#{current_path}/public/gjzg.zip"
     end
 
   end
