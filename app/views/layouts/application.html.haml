@@ -2,26 +2,17 @@
 %html
   %head
     %meta{:content => "text/html; charset=UTF-8", "http-equiv" => "Content-Type"}/
-    %meta{name: "viewport", content: "width=device-width, initial-scale=1"}
-    %title 构建中国
-    = stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => false
-    = javascript_include_tag 'application', 'data-turbolinks-track' => false
+    %title= Setting.title
+    = stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true
+    = javascript_include_tag 'application', 'data-turbolinks-track' => true
     = csrf_meta_tags
   %body
     = render :partial => "widgets/header"
-    .uk-container.uk-container-center.uk-margin-bottom
-      %nav.uk-navbar
-        = link_to "Brand", "/", class: "uk-navbar-brand uk-hidden-small"
-        %ul.uk-navbar-nav.uk-hidden-small
-          %li
-            = link_to "首页", root_path, class: "active"
-      = link_to "", "#offcanvas", "class" => "uk-navbar-toggle uk-visible-small", "data-uk-offcanvas" => true
-      .uk-navbar-brand.uk-navbar-center.uk-visible-small
+    .uk-container.uk-container-center.fc-container
+      .fc-sidebar
+        = render :partial => "widgets/sidebar"
+      .fc-main.uk-medium-width-1-1.uk-height-1-1.uk-margin-left
+        = render :partial => "widgets/message"
+        = yield
+    .uk-clearfix
 
-    = yield
-
-    #offcanvas.uk-offcanvas
-      .uk-offcanvas-bar
-        %ul.uk-nav.uk-nav-offcanvas
-          %li
-            = link_to "首页", root_path, class: "active"

@@ -1,9 +1,13 @@
 Rails.application.routes.draw do
+  get 'players/index'
+
   devise_for :moderators
   namespace :api do
     resources :buildings
     resources :alliances
   end
+
+  resources :players
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
