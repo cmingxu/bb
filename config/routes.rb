@@ -3,6 +3,8 @@ Rails.application.routes.draw do
 
   devise_for :moderators
   namespace :api do
+    get '/' => 'base#index'
+    get '/version' => 'base#version'
     resources :buildings
     resources :alliances
   end

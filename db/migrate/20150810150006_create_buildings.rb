@@ -2,7 +2,7 @@ class CreateBuildings < ActiveRecord::Migration
   def change
     create_table :buildings do |t|
       t.string :building_type
-      t.integer :level
+      t.integer :level, default: 1
       t.integer :city_id
       t.integer :x
       t.integer :y
