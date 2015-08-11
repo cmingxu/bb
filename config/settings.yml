@@ -1,0 +1,17 @@
+default: &default
+  sitename: ""
+  title: ""
+  domain: ""
+  description: ""
+
+production:
+  <<: *default
+
+development:
+  <<: *default
+
+staging:
+  <<: *default
+
+test:
+  <<: *default
